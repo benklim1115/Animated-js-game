@@ -14,6 +14,7 @@ window.addEventListener("load", function(){
         draw(context) {
             context.beginPath();
             context.arc(100, 100, 50, 0, Math.round * 2);
+            context.fill();
         }
     }
 
@@ -24,6 +25,10 @@ window.addEventListener("load", function(){
             this.width = this.canvas.width;
             this.height = this.canvas.height;
             this.player = new Player(this);
+        }
+
+        render() {
+            
         }
     }
 
