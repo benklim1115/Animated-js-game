@@ -5,12 +5,14 @@ window.addEventListener("load", function(){
     canvas.width = 1280;
     canvas.height = 720;
 
+    //give access to game element and properties
     class Player {
-        constructor() {
-
+        constructor(game) {
+            this.game = game;
         }
     }
 
+    //give access to canvas element and properties
     class Game {
         constructor(canvas) {
             this.canvas = canvas;
