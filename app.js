@@ -18,6 +18,7 @@ window.addEventListener("load", function(){
             this.canvas = canvas;
             this.width = this.canvas.width;
             this.height = this.canvas.height;
+            this.player = new Player(this);
         }
     }
 
