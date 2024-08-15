@@ -22,6 +22,8 @@ window.addEventListener("load", function(){
         }
     }
 
+    const game = new Game(canvas);
+
     //recreates game within loop to create the illusion of movement
     function animate() {
 
