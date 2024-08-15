@@ -10,6 +10,11 @@ window.addEventListener("load", function(){
         constructor(game) {
             this.game = game;
         }
+        
+        draw(context) {
+            context.beginPath();
+            context.arc(100, 100, 50, 0, Math.round * 2);
+        }
     }
 
     //give access to canvas element and properties
@@ -23,6 +28,7 @@ window.addEventListener("load", function(){
     }
 
     const game = new Game(canvas);
+    // console.log(game);
 
     //recreates game within loop to create the illusion of movement
     function animate() {
