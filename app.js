@@ -27,8 +27,8 @@ window.addEventListener("load", function(){
             this.player = new Player(this);
         }
 
-        render() {
-            
+        render(context) {
+            this.player.draw(context);
         }
     }
 
