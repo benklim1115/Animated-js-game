@@ -6,11 +6,17 @@ window.addEventListener("load", function(){
     canvas.height = 720;
 
     class Player {
-        
+        constructor() {
+
+        }
     }
 
     class Game {
-
+        constructor(canvas) {
+            this.canvas = canvas;
+            this.width = this.canvas.width;
+            this.height = this.canvas.height;
+        }
     }
 
     //recreates game within loop to create the illusion of movement
