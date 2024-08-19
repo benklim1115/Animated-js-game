@@ -15,7 +15,7 @@ window.addEventListener("load", function(){
             this.game = game;
             this.collisionX = this.game.width * 0.5;
             this.collisionY = this.game.height * 0.5;
-            this.collisionRadius = 30;
+            this.collisionRadius = 50;
         }
         
         draw(context) {
@@ -50,22 +50,20 @@ window.addEventListener("load", function(){
 
             canvas.addEventListener("mousedown", (e) => {
                 //using offset to get coordinate on target node which is the canvas element
-                this.mouse.x = e.offSetX;
-                this.mouse.y = e.offSetY;
+                this.mouse.x = e.offsetX;
+                this.mouse.y = e.offsetY;
                 this.mouse.pressed = true;
             });
             canvas.addEventListener("mouseup", (e) => {
-                this.mouse.x = e.offSetX;
-                this.mouse.y = e.offSetY;
+                this.mouse.x = e.offsetX;
+                this.mouse.y = e.offsetY;
                 this.mouse.pressed = false;
             });
             canvas.addEventListener("mousemove", (e) => {
-                this.mouse.x = e.offSetX;
-                this.mouse.y = e.offSetY;
+                this.mouse.x = e.offsetX;
+                this.mouse.y = e.offsetY;
             });
         }
-
-        
 
         render(context) {
             this.player.draw(context);
@@ -74,12 +72,15 @@ window.addEventListener("load", function(){
     }
 
     const game = new Game(canvas);
-    game.render(ctx);
-    console.log(game);
 
     //recreates game within loop to create the illusion of movement
     function animate() {
-
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        game.render(ctx);
+        //this will create an endless animation loop must pass parent function
+        requestAnimationFrame(animate);
     }
+
+    animate();
 
 });
