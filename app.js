@@ -45,6 +45,8 @@ window.addEventListener("load", function(){
 
             canvas.addEventListener("mousedown", function(e) {
                 //using offset to get coordinate on target node which is the canvas element
+                this.mouse.x = e.offSetX;
+                this.mouse.y = e.offSetY;
                 console.log(e.offsetX, e.offsetY);
             });
         }
