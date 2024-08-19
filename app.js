@@ -21,7 +21,11 @@ window.addEventListener("load", function(){
         draw(context) {
             context.beginPath();
             context.arc(this.collisionX, this.collisionY, this.collisionRadius, 0, Math.PI * 2);
+            //limits certain canvas settings to specific calls like .fill() so subsequent shapes are not transparent too
+            context.save();
+            context.globalAlpha = 0.5;
             context.fill();
+            context.restore();
             context.stroke();
         }
     }
