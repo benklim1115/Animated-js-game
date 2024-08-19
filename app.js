@@ -5,6 +5,10 @@ window.addEventListener("load", function(){
     canvas.width = 1280;
     canvas.height = 720;
 
+    ctx.fillStyle = "white";
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = "white";
+
     //give access to game element and properties, have player start in middle of map
     class Player {
         constructor(game) {
@@ -18,6 +22,7 @@ window.addEventListener("load", function(){
             context.beginPath();
             context.arc(this.collisionX, this.collisionY, this.collisionRadius, 0, Math.PI * 2);
             context.fill();
+            context.stroke();
         }
     }
 
