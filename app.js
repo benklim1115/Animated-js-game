@@ -37,9 +37,14 @@ window.addEventListener("load", function(){
             this.width = this.canvas.width;
             this.height = this.canvas.height;
             this.player = new Player(this);
+            this.mouse = {
+                x: this.width * 0.5,
+                y: this.height * 0.5,
+                pressed: false
+            }
 
-            window.addEventListener("mousedown", function() {
-                console.log("mousedown");
+            window.addEventListener("mousedown", function(e) {
+                console.log(e.x, e.y);
             });
         }
 
@@ -52,7 +57,7 @@ window.addEventListener("load", function(){
 
     const game = new Game(canvas);
     game.render(ctx);
-    // console.log(game);
+    console.log(game);
 
     //recreates game within loop to create the illusion of movement
     function animate() {
