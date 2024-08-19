@@ -5,17 +5,17 @@ window.addEventListener("load", function(){
     canvas.width = 1280;
     canvas.height = 720;
 
-    //give access to game element and properties
+    //give access to game element and properties, have player start in middle of map
     class Player {
         constructor(game) {
             this.game = game;
-            this.collisionX;
-            this.collisionY;
+            this.collisionX = this.game.width * 0.5;
+            this.collisionY = this.game.height * 0.5;
         }
         
         draw(context) {
             context.beginPath();
-            context.arc(400, 300, 50, 0, Math.PI * 2);
+            context.arc(this.collisionX, this.collisionY, 50, 0, Math.PI * 2);
             context.fill();
         }
     }
