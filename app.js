@@ -37,7 +37,13 @@ window.addEventListener("load", function(){
             this.width = this.canvas.width;
             this.height = this.canvas.height;
             this.player = new Player(this);
+
+            window.addEventListener("mousedown", function() {
+                console.log("mousedown");
+            });
         }
+
+        
 
         render(context) {
             this.player.draw(context);
