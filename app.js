@@ -9,6 +9,8 @@ window.addEventListener("load", function(){
     class Player {
         constructor(game) {
             this.game = game;
+            this.collisionX;
+            this.collisionY;
         }
         
         draw(context) {
