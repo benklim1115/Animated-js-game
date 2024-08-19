@@ -13,7 +13,7 @@ window.addEventListener("load", function(){
         
         draw(context) {
             context.beginPath();
-            context.arc(100, 100, 50, 0, Math.round * 2);
+            context.arc(400, 300, 50, 0, Math.PI * 2);
             context.fill();
         }
     }
@@ -33,6 +33,7 @@ window.addEventListener("load", function(){
     }
 
     const game = new Game(canvas);
+    game.render(ctx);
     // console.log(game);
 
     //recreates game within loop to create the illusion of movement
