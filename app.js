@@ -43,7 +43,7 @@ window.addEventListener("load", function(){
                 pressed: false
             }
 
-            canvas.addEventListener("mousedown", function(e) {
+            canvas.addEventListener("mousedown", (e) => {
                 //using offset to get coordinate on target node which is the canvas element
                 this.mouse.x = e.offSetX;
                 this.mouse.y = e.offSetY;
