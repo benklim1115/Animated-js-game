@@ -28,6 +28,11 @@ window.addEventListener("load", function(){
             context.restore();
             context.stroke();
         }
+
+        update() {
+            this.collisionX = this.game.mouse.x;
+            this.collisionY = this.game.mouse.y;
+        }
     }
 
     //give access to canvas element and properties
@@ -64,6 +69,7 @@ window.addEventListener("load", function(){
 
         render(context) {
             this.player.draw(context);
+            this.player.update();
         }
     }
 
