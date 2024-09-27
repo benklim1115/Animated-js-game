@@ -43,8 +43,14 @@ window.addEventListener("load", function(){
             this.dx = this.game.mouse.x - this.collisionX;
             this.dy = this.game.mouse.y - this.collisionY;
             const distance = Math.hypot(this.dy, this.dx);
-            this.speedX = this.dx/distance || 0;
-            this.speedY = this.dy/distance || 0;
+            //only move player when distance between mouse and player is more than the speed modifier
+            if (distance > this.speedModifier) {
+                this.speedX = this.dx/distance || 0;
+                this.speedY = this.dy/distance || 0;
+            } else {
+                this.speedX = 0;
+                this.speedY = 0;
+            }
             this.collisionX += this.speedX * this.speedModifier;
             this.collisionY += this.speedY * this.speedModifier;
         }
