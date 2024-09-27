@@ -39,8 +39,10 @@ window.addEventListener("load", function(){
         }
 
         update() {
-            this.speedX = (this.game.mouse.x - this.collisionX) / 20;
-            this.speedY = (this.game.mouse.y - this.collisionY) / 20;
+            this.dx = this.game.mouse.x - this.collisionX;
+            this.dy = this.game.mouse.y - this.collisionY;
+            this.speedX = dx/20;
+            this.speedY = dy/20;
             this.collisionX += this.speedX;
             this.collisionY += this.speedY;
         }
