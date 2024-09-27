@@ -27,6 +27,10 @@ window.addEventListener("load", function(){
             context.fill();
             context.restore();
             context.stroke();
+            context.beginPath();
+            context.moveTo(this.collisionX, this.collisionY);
+            context.lineTo(this.game.mouse.x, this.game.mouse.y);
+            context.stroke();
         }
 
         update() {
