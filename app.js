@@ -18,6 +18,9 @@ window.addEventListener("load", function(){
             this.collisionRadius = 50;
             this.speedX = 0;
             this.speedY = 0;
+            //distance between mouse and player
+            this.dx = 0;
+            this.dy = 0;
         }
         
         draw(context) {
