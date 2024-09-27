@@ -21,6 +21,7 @@ window.addEventListener("load", function(){
             //distance between mouse and player
             this.dx = 0;
             this.dy = 0;
+            this.speedModifier = 5;
         }
         
         draw(context) {
@@ -44,8 +45,8 @@ window.addEventListener("load", function(){
             const distance = Math.hypot(this.dy, this.dx);
             this.speedX = this.dx/distance || 0;
             this.speedY = this.dy/distance || 0;
-            this.collisionX += this.speedX;
-            this.collisionY += this.speedY;
+            this.collisionX += this.speedX * this.speedModifier;
+            this.collisionY += this.speedY * this.speedModifier;
         }
     }
 
