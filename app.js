@@ -16,6 +16,8 @@ window.addEventListener("load", function(){
             this.collisionX = this.game.width * 0.5;
             this.collisionY = this.game.height * 0.5;
             this.collisionRadius = 50;
+            this.speedX = 0;
+            this.speedY = 0;
         }
         
         draw(context) {
@@ -34,8 +36,10 @@ window.addEventListener("load", function(){
         }
 
         update() {
-            this.collisionX = this.game.mouse.x;
-            this.collisionY = this.game.mouse.y;
+            this.speedX = (this.game.mouse.x - this.collisionX) / 20;
+            this.speedY = (this.game.mouse.y - this.collisionY) / 20;
+            this.collisionX += this.speedX;
+            this.collisionY += this.speedY;
         }
     }
 
